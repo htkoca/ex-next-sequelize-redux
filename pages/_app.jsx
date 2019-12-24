@@ -11,7 +11,7 @@ import { getInitialState } from '@/redux/actions';
 // react
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
-    ctx.store.dispatch(getInitialState());
+    await ctx.store.dispatch(getInitialState(ctx.req.headers.host));
     const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
     return { pageProps };
   }
