@@ -11,6 +11,17 @@ WIP Boilerplate with Next.js + Sequelize + Redux + Eslint + Prettier
 - `npm run build` to build front end for prod env
 - `npm run start` to start next in prod env
 
+## Folders
+
+- Don't import backend files, etc into front end files. The environment secrets / vars will get compiled and end up public.
+- Front End
+  - `./components`
+  - `./pages`
+  - `./redux`
+- Back End
+  - `./pages/api`
+  - `./db`
+
 ## Env file variables
 
 - Replace `*` with data
@@ -19,9 +30,8 @@ WIP Boilerplate with Next.js + Sequelize + Redux + Eslint + Prettier
   - `DB_PASSWORD=*`
   - `DB_USERNAME=*`
 
-## Notes
+## Misc Notes
 
-- do not import files in `api` and `lib` to files in `components` or `pages`. Webpack will build the backend code + env secrets to the front end and people can inspect it.
 - `jsconfig.json` is cross IDE settings
 - `.eslintrc` and `.prettierrc` use airbnb + prettier defaults respectively.
 - `.babelrc` and `browserlistrc` is used by next's internal webpack config
