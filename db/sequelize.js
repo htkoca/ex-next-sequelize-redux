@@ -1,6 +1,9 @@
 // dependencies
 import Sequelize from 'sequelize';
 
+// sequelize dependencies
+import { Question } from '@/db/models';
+
 // init instances
 const sql = new Sequelize(
   process.env.DB_DATABASE,
@@ -8,7 +11,10 @@ const sql = new Sequelize(
   process.env.DB_PASSWORD,
   {
     host: process.env.DB_HOST,
-    dialect: 'mysql'
+    dialect: 'mysql',
+    define: {
+      timestamps: false
+    }
   }
 );
 
@@ -23,4 +29,9 @@ sql
   })
   .done();
 
-export default sql;
+const db = {
+  sql,
+  Question: Question(sql, Sequelize)
+};
+
+export default db;

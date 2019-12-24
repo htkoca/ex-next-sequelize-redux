@@ -13,7 +13,6 @@ export const getInitialState = (host) => {
       .then(() => dispatch({ type: C.END_LOADING }))
       .catch((err) => {
         dispatch({ type: C.END_LOADING });
-        console.log('erro', err);
       });
   };
 };
