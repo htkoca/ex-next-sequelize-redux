@@ -8,7 +8,7 @@
     "start": "dotenv -e .env next start"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "dotenv-cli": "^3.1.0",
     "mysql2": "^2.0.2",
     "next": "9.1.6",
